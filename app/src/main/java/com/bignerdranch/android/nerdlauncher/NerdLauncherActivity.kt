@@ -49,7 +49,8 @@ class NerdLauncherActivity : AppCompatActivity() {
         RecyclerView.ViewHolder(itemView),
         View.OnClickListener {
 
-        private val nameTextView = itemView as TextView
+//        private val nameTextView = itemView as TextView
+        private val nameTextView: TextView = itemView.findViewById(R.id.app_label_tv)
         private lateinit var resolveInfo: ResolveInfo
 
         init {
@@ -84,7 +85,7 @@ class NerdLauncherActivity : AppCompatActivity() {
                 ActivityHolder {
             val layoutInflater = LayoutInflater.from(container.context)
             val view = layoutInflater
-                .inflate(android.R.layout.simple_list_item_1, container, false)
+                .inflate(R.layout.list_item_app, container, false)
             return ActivityHolder(view)
         }
 
